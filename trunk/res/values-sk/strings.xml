@@ -4,6 +4,15 @@
 	<string name="btn_add_languages">Zvolit jazyk</string>
 	<string name="btn_add_languages_verical">Zvolit jazyk</string>
 	<string name="toast_nothing_todo">Nic na preklad</string>
+
+	<string name="prefs_experimental_title">Experimental</string>
+	<string name="pref_select_api_title">Google Translate™ API v2</string>
+	<string name="pref_select_api_summary">It\'s a *labs* feature and may not work</string>
+
+	<string name="pref_strip_url_title">Strip URL\'s</string>
+	<string name="pref_strip_url_summary">Remove http links to improve language recognition</string>
+	
+	
 	<string name="pref_select_languages">Jazyky</string>
 	<string name="pref_select_languages_title">Vaša rec</string>
 	<string name="pref_select_languages_summary">Zvolte si rec, ktorej rozumiete</string>

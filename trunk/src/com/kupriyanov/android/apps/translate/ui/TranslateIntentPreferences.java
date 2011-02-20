@@ -1,23 +1,20 @@
 package com.kupriyanov.android.apps.translate.ui;
 
-import com.kupriyanov.android.apps.translate.R;
-import com.kupriyanov.android.apps.translate.Setup;
-import com.kupriyanov.android.apps.translate.R.xml;
-
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnDismissListener;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
-import android.preference.Preference.OnPreferenceChangeListener;
-
 import android.preference.PreferenceScreen;
 import android.widget.Toast;
+
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+import com.kupriyanov.android.apps.translate.R;
+import com.kupriyanov.android.apps.translate.Setup;
 
 public class TranslateIntentPreferences extends PreferenceActivity implements OnPreferenceChangeListener,
 		DialogInterface.OnDismissListener {

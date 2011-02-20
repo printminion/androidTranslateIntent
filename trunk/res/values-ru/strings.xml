@@ -4,6 +4,14 @@
 	<string name="btn_add_languages_verical">Добавить язык</string>
 	<string name="toast_nothing_todo">Нечего переводить</string>
 	<!-- Preferences -->
+	<string name="prefs_experimental_title">Экспериментальные</string>
+	<string name="pref_select_api_title">Google Translate™ API v2</string>
+	<string name="pref_select_api_summary">Это *лаб* функция и может не работать</string>
+
+	<string name="pref_strip_url_title">Удаление линков</string>
+	<string name="pref_strip_url_summary">Удалять ссылки для улучшения распознавания языка</string>
+	
+	
 	<string name="pref_select_languages">Языки</string>
 	<string name="pref_select_languages_title">Ваши языки</string>
 	<string name="pref_select_languages_summary">Выберите языки которые Вы понимаете</string>

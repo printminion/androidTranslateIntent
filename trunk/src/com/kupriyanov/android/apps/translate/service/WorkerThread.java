@@ -41,12 +41,12 @@ import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 
+import com.kupriyanov.android.apps.translate.Preferences;
 import com.kupriyanov.android.apps.translate.R;
 import com.kupriyanov.android.apps.translate.Setup;
-import com.zedray.framework.application.Cache;
 import com.zedray.framework.application.BaseApplication;
+import com.zedray.framework.application.Cache;
 import com.zedray.framework.application.UiQueue;
-import com.zedray.framework.utils.NotificationUtils;
 import com.zedray.framework.utils.Type;
 
 /***
@@ -243,15 +243,23 @@ public class WorkerThread extends Thread {
 				prepareUserAgent(mMyService.getApplicationContext());
 				String strSourceLanguage = "";
 
-				String strQuery = "https://www.googleapis.com/language/translate/v2?key=" + Setup.API_KEY_GOOGLETRANSLATE
-						+ "&q=" + Uri.encode(bundle.getString("TEXT")) + "&source=" + strSourceLanguage + "&target="
-						+ bundle.getString("LANGUAGE_TO") + "&prettyprint=true";
+				if (bundle.getBoolean(Preferences.API)) {
+					String strQuery2 = "https://www.googleapis.com/language/translate/v2?key="
+							+ Setup.API_KEY_GOOGLETRANSLATE + "&q=" + Uri.encode(bundle.getString("TEXT")) + "&source="
+							+ strSourceLanguage + "&target=" + bundle.getString("LANGUAGE_TO") + "&prettyprint=true";
+					Log.d(TAG, "[REQUEST2->]:" + strQuery2);
+					pageContent = getPageContent2(strQuery2, false);
+
+				} else {
+					String strQuery = "https://ajax.googleapis.com/ajax/services/language/translate?v=1.0" + "&q="
+							+ Uri.encode(bundle.getString("TEXT")) + "&langpair=%7C" + bundle.getString("LANGUAGE_TO")
+							+ "&key=" + Setup.API_KEY_GOOGLETRANSLATE;
+					Log.d(TAG, "[REQUEST1->]:" + strQuery);
+					pageContent = getPageContent(strQuery, false);
+
+				}
 
 				// strQuery = Uri.encode(strQuery);
-
-				//Log.d(TAG, "[REQUEST->]:" + strQuery);
-
-				pageContent = getPageContent(strQuery, false);
 
 				outBundle.putString("TRANSLATION", pageContent);
 				mUiQueue.postToUi(Type.FINISHED_TRANSLATION, outBundle, false);
@@ -309,6 +317,45 @@ public class WorkerThread extends Thread {
 	 *            If there are problems parsing the response.
 	 */
 	public static String getPageContent(String apiQuery, boolean expandTemplates) throws ApiException, ParseException {
+
+		String content = getUrlContent(apiQuery);
+
+		Log.d(TAG, "[RESPONSE->]:" + content);
+
+		try {
+			// Drill into the JSON response to find the content body
+			JSONObject response = new JSONObject(content);
+			JSONObject data = response.getJSONObject("responseData");
+			// JSONObject pages = data.getJSONObject("translations");
+			// JSONObject page = pages.getJSONObject((String) pages.keys().next());
+
+			// JSONArray translations = data.getJSONArray("translations");
+			// JSONObject revision = translations.getJSONObject(0);
+
+			return data.getString("translatedText");
+		} catch (JSONException e) {
+			throw new ParseException("Problem parsing API response:" + content, e);
+		}
+
+	}
+
+	/**
+	 * Read and return the content for a specific Wiktionary page. This makes a
+	 * lightweight API call, and trims out just the page content returned.
+	 * Because this call blocks until results are available, it should not be run
+	 * from a UI thread.
+	 * 
+	 * @param title
+	 *           The exact title of the Wiktionary page requested.
+	 * @param expandTemplates
+	 *           If true, expand any wiki templates found.
+	 * @return Exact content of page.
+	 * @throws ApiException
+	 *            If any connection or server error occurs.
+	 * @throws ParseException
+	 *            If there are problems parsing the response.
+	 */
+	public static String getPageContent2(String apiQuery, boolean expandTemplates) throws ApiException, ParseException {
 
 		String content = getUrlContent(apiQuery);
 
@@ -384,6 +431,11 @@ public class WorkerThread extends Thread {
 	 * because of a network error, or the server returned a bad status code.
 	 */
 	public static class ApiException extends Exception {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		public ApiException(String detailMessage, Throwable throwable) {
 			super(detailMessage, throwable);
 		}
@@ -398,6 +450,11 @@ public class WorkerThread extends Thread {
 	 * either because the response was empty, or it was malformed.
 	 */
 	public static class ParseException extends Exception {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		public ParseException(String detailMessage, Throwable throwable) {
 			super(detailMessage, throwable);
 		}

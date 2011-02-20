@@ -18,17 +18,15 @@ package com.kupriyanov.android.apps.translate.service;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 
+import com.zedray.framework.application.BaseApplication;
 import com.zedray.framework.application.Cache;
 import com.zedray.framework.application.ServiceQueue;
-import com.zedray.framework.application.BaseApplication;
 import com.zedray.framework.application.UiQueue;
-import com.zedray.framework.utils.Type;
 
 /***
  * Service class currently performs background work in response to incoming

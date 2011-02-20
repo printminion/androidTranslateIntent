@@ -125,4 +125,16 @@
 			android:defaultValue="true" android:title="@string/prefs_analytics_on_title"/>
 </PreferenceCategory>
 
+
+<PreferenceCategory android:title="@string/prefs_experimental_title">
+
+			<CheckBoxPreference android:title="@string/pref_strip_url_title"
+			    android:summary="@string/pref_strip_url_summary"
+				android:defaultValue="true" android:key="strip_urls" />
+
+			<CheckBoxPreference android:title="@string/pref_select_api_title"
+			    android:summary="@string/pref_select_api_summary"
+				android:defaultValue="false" android:key="api" />
+</PreferenceCategory>
+
 </PreferenceScreen>

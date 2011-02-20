@@ -224,8 +224,18 @@ public class TranslateActivity extends BaseActivity {
 		txtTarget.setText("");
 
 		Bundle outBundle = new Bundle();
+
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+		if (prefs.getBoolean(Preferences.STRIP_URLS, false)) {
+			txtToTranslate = txtToTranslate.replaceAll("(http://[^ ]*)", "");
+			txtToTranslate = txtToTranslate.replaceAll("(https://[^ ]*)", "");
+		}
+
 		outBundle.putString("TEXT", txtToTranslate);
 		outBundle.putString("LANGUAGE_TO", strTargetLanguage);
+
+		outBundle.putBoolean(Preferences.API, prefs.getBoolean(Preferences.API, false));
 
 		getServiceQueue().postToService(Type.DO_TRANSLATE_TASK, outBundle);
 

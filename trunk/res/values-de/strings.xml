@@ -4,6 +4,13 @@
 	<string name="btn_add_languages_verical">Sprache hinzufügen</string>
 	<string name="toast_nothing_todo">Nichts zu übersetzen</string>
 	<!-- Preferences -->
+	<string name="prefs_experimental_title">Experimentelle</string>
+	<string name="pref_select_api_title">Google Translate™ API v2</string>
+	<string name="pref_select_api_summary">Es ist eine Labs-Funktion und könnte nicht funktionieren</string>
+
+	<string name="pref_strip_url_title">URL entfernen</string>
+	<string name="pref_strip_url_summary">Entfernen von Http-Links um die Spracherkennung zu verbessern</string>
+	
 	<string name="pref_select_languages">Sprachen</string>
 	<string name="pref_select_languages_title">Ihre Sprachen</string>
 	<string name="pref_select_languages_summary">Wählen Sie Sprachen Sie verstehen</string>
