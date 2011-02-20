@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory android:title="@string/pref_select_languages">
+
+		<PreferenceScreen android:key="languages"
+			android:summary="@string/pref_select_languages_summary"
+			android:title="@string/pref_select_languages_title">
+
+			<CheckBoxPreference android:title="@string/lang_af"
+				android:defaultValue="false" android:key="af" />
+			<CheckBoxPreference android:title="@string/lang_sq"
+				android:defaultValue="false" android:key="sq" />
+			<CheckBoxPreference android:title="@string/lang_ar"
+				android:defaultValue="false" android:key="ar" />
+			<CheckBoxPreference android:title="@string/lang_eu"
+				android:defaultValue="false" android:key="eu" />
+			<CheckBoxPreference android:title="@string/lang_be"
+				android:defaultValue="false" android:key="be" />
+			<CheckBoxPreference android:title="@string/lang_bg"
+				android:defaultValue="false" android:key="bg" />
+			<CheckBoxPreference android:title="@string/lang_ca"
+				android:defaultValue="false" android:key="ca" />
+			<CheckBoxPreference android:title="@string/lang_zh_CN"
+				android:defaultValue="false" android:key="zh-CN" />
+			<CheckBoxPreference android:title="@string/lang_zh_TW"
+				android:defaultValue="false" android:key="zh-TW" />
+			<CheckBoxPreference android:title="@string/lang_hr"
+				android:defaultValue="false" android:key="hr" />
+			<CheckBoxPreference android:title="@string/lang_cs"
+				android:defaultValue="false" android:key="cs" />
+			<CheckBoxPreference android:title="@string/lang_da"
+				android:defaultValue="false" android:key="da" />
+			<CheckBoxPreference android:title="@string/lang_nl"
+				android:defaultValue="false" android:key="nl" />
+			<CheckBoxPreference android:title="@string/lang_en"
+				android:defaultValue="false" android:key="en" />
+			<CheckBoxPreference android:title="@string/lang_et"
+				android:defaultValue="false" android:key="et" />
+			<CheckBoxPreference android:title="@string/lang_tl"
+				android:defaultValue="false" android:key="tl" />
+			<CheckBoxPreference android:title="@string/lang_fi"
+				android:defaultValue="false" android:key="fi" />
+			<CheckBoxPreference android:title="@string/lang_fr"
+				android:defaultValue="false" android:key="fr" />
+			<CheckBoxPreference android:title="@string/lang_gl"
+				android:defaultValue="false" android:key="gl" />
+			<CheckBoxPreference android:title="@string/lang_de"
+				android:defaultValue="false" android:key="de" />
+			<CheckBoxPreference android:title="@string/lang_el"
+				android:defaultValue="false" android:key="el" />
+			<CheckBoxPreference android:title="@string/lang_ht"
+				android:defaultValue="false" android:key="ht" />
+			<CheckBoxPreference android:title="@string/lang_iw"
+				android:defaultValue="false" android:key="iw" />
+			<CheckBoxPreference android:title="@string/lang_hi"
+				android:defaultValue="false" android:key="hi" />
+			<CheckBoxPreference android:title="@string/lang_hu"
+				android:defaultValue="false" android:key="hu" />
+			<CheckBoxPreference android:title="@string/lang_is"
+				android:defaultValue="false" android:key="is" />
+			<CheckBoxPreference android:title="@string/lang_id"
+				android:defaultValue="false" android:key="id" />
+			<CheckBoxPreference android:title="@string/lang_ga"
+				android:defaultValue="false" android:key="ga" />
+			<CheckBoxPreference android:title="@string/lang_it"
+				android:defaultValue="false" android:key="it" />
+			<CheckBoxPreference android:title="@string/lang_ja"
+				android:defaultValue="false" android:key="ja" />
+			<CheckBoxPreference android:title="@string/lang_lv"
+				android:defaultValue="false" android:key="lv" />
+			<CheckBoxPreference android:title="@string/lang_lt"
+				android:defaultValue="false" android:key="lt" />
+			<CheckBoxPreference android:title="@string/lang_mk"
+				android:defaultValue="false" android:key="mk" />
+			<CheckBoxPreference android:title="@string/lang_ms"
+				android:defaultValue="false" android:key="ms" />
+			<CheckBoxPreference android:title="@string/lang_mt"
+				android:defaultValue="false" android:key="mt" />
+			<CheckBoxPreference android:title="@string/lang_no"
+				android:defaultValue="false" android:key="no" />
+			<CheckBoxPreference android:title="@string/lang_fa"
+				android:defaultValue="false" android:key="fa" />
+			<CheckBoxPreference android:title="@string/lang_pl"
+				android:defaultValue="false" android:key="pl" />
+			<CheckBoxPreference android:title="@string/lang_pt"
+				android:defaultValue="false" android:key="pt" />
+			<CheckBoxPreference android:title="@string/lang_ro"
+				android:defaultValue="false" android:key="ro" />
+			<CheckBoxPreference android:title="@string/lang_ru"
+				android:defaultValue="false" android:key="ru" />
+			<CheckBoxPreference android:title="@string/lang_sr"
+				android:defaultValue="false" android:key="sr" />
+			<CheckBoxPreference android:title="@string/lang_sk"
+				android:defaultValue="false" android:key="sk" />
+			<CheckBoxPreference android:title="@string/lang_sl"
+				android:defaultValue="false" android:key="sl" />
+			<CheckBoxPreference android:title="@string/lang_es"
+				android:defaultValue="false" android:key="es" />
+			<CheckBoxPreference android:title="@string/lang_sw"
+				android:defaultValue="false" android:key="sw" />
+			<CheckBoxPreference android:title="@string/lang_sv"
+				android:defaultValue="false" android:key="sv" />
+			<CheckBoxPreference android:title="@string/lang_th"
+				android:defaultValue="false" android:key="th" />
+			<CheckBoxPreference android:title="@string/lang_tr"
+				android:defaultValue="false" android:key="tr" />
+			<CheckBoxPreference android:title="@string/lang_uk"
+				android:defaultValue="false" android:key="uk" />
+			<CheckBoxPreference android:title="@string/lang_vi"
+				android:defaultValue="false" android:key="vi" />
+			<CheckBoxPreference android:title="@string/lang_cy"
+				android:defaultValue="false" android:key="cy" />
+			<CheckBoxPreference android:title="@string/lang_yi"
+				android:defaultValue="false" android:key="yi" />
+
+		</PreferenceScreen>
+
+	</PreferenceCategory>
+
+<PreferenceCategory android:title="@string/prefs_analytics_title">
+		<CheckBoxPreference android:key="analytics_on"
+			android:summary="@string/prefs_analytics_on_summary"
+			android:defaultValue="true" android:title="@string/prefs_analytics_on_title"/>
+</PreferenceCategory>
+
+</PreferenceScreen>

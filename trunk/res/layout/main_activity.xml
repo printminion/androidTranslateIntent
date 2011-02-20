@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/RelativeLayout01" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+	<RelativeLayout android:id="@+id/RelativeLayout02"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true" android:layout_above="@+id/txtTarget">
+		
+		
+		<EditText android:text="@string/btn_add_languages"
+			android:id="@+id/txtSource" android:minHeight="180dip"
+			android:layout_width="fill_parent" android:gravity="top"
+			android:layout_alignParentTop="true" android:layout_height="wrap_content"
+			android:layout_above="@+id/llTranslateButton"></EditText>
+
+
+
+		<LinearLayout android:id="@+id/llTranslateButton"
+			android:orientation="horizontal" android:background="@android:drawable/bottom_bar"
+			android:paddingLeft="4.0dip" android:paddingTop="5.0dip"
+			android:paddingRight="4.0dip" android:paddingBottom="1.0dip"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true">
+
+			<Button android:id="@+id/allow" android:layout_width="0.0dip"
+				android:layout_height="fill_parent" android:text="de"
+				android:layout_weight="1.0" />
+
+			<Button android:id="@+id/allow" android:layout_width="0.0dip"
+				android:layout_height="fill_parent" android:text="en"
+				android:layout_weight="1.0" />
+
+			<Button android:id="@+id/allow" android:layout_width="0.0dip"
+				android:layout_height="fill_parent" android:text="ru"
+				android:layout_weight="1.0" />
+
+
+
+
+		</LinearLayout>
+		<LinearLayout android:id="@+id/llTranslateAddButton"
+			android:orientation="horizontal" android:background="@android:drawable/bottom_bar"
+			android:paddingLeft="4.0dip" android:paddingTop="5.0dip"
+			android:paddingRight="4.0dip" android:paddingBottom="1.0dip"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true">
+
+			<Button android:layout_width="0.0dip" android:layout_height="fill_parent"
+				android:text="@string/btn_add_languages" android:layout_weight="1.0"
+				android:onClick="addLanguage" android:id="@+id/btnAddLanguages" />
+		</LinearLayout>
+
+		<!-- <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" 
+			android:id="@+id/rlButtons" android:layout_alignParentBottom="true"> <Button 
+			android:minHeight="20dip" android:id="@+id/btnAddLanguages" android:layout_width="fill_parent" 
+			android:onClick="addLanguage" android:tag="btnAdd" android:layout_height="wrap_content" 
+			android:text="@string/btn_add_languages"></Button> <LinearLayout android:layout_height="wrap_content" 
+			android:id="@+id/llTranslateButton" android:layout_width="fill_parent"> <Button 
+			android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="wrap_content" 
+			android:text="dummy"></Button> </LinearLayout> </RelativeLayout> -->
+	</RelativeLayout>
+
+	<EditText android:id="@+id/txtTarget" android:layout_width="fill_parent"
+		android:layout_alignParentBottom="true" android:layout_below="@+id/RelativeLayout01"
+		android:layout_height="wrap_content" android:minHeight="200dip"
+		android:gravity="top" android:visibility="visible">
+	</EditText>
+
+</RelativeLayout>

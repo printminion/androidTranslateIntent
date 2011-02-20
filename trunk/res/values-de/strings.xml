@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="btn_add_languages">Sprache hinzufügen</string>
+	<string name="btn_add_languages_verical">Sprache hinzufügen</string>
+	<string name="toast_nothing_todo">Nichts zu übersetzen</string>
+	<!-- Preferences -->
+	<string name="pref_select_languages">Sprachen</string>
+	<string name="pref_select_languages_title">Ihre Sprachen</string>
+	<string name="pref_select_languages_summary">Wählen Sie Sprachen Sie verstehen</string>
+	<string name="prefs_analytics_title">Statistik</string>
+	<string name="prefs_analytics_on">true</string>
+	<string name="prefs_analytics_on_title">Google Analytics</string>
+	<string name="prefs_analytics_on_summary">Bitte helfen Sie uns, diese Anwendung zu verbessern</string>
+	<!-- -->
+	<string name="dialog_connectivity_title">Keine Internetverbindung</string>
+	<string name="dialog_connectivity_message">Übersetzungsintent nutzt Google Translate API.\nBitte aktivieren Sie Internet-Verbindung</string>
+	<!--  -->
+	<string name="app_instruction">1) Wählen Sie Sprachen, die Sie verstehen. \n2) Verwenden Sie \"Senden an\"-Funktion, um den Text von einer anderen Anwendung, z.B. Twitter, an diese Anwendung zu senden.\n3) Drücken Sie die Taste mit der gewünschten Sprache um zu übersetzen.\n4) Viel Spass!</string>
+	<!-- 	 -->
+	<string name="local_service_started">local_service_started</string>
+	<string name="local_service_label">local_service_label</string>
+	<string name="local_service_connected">local_service_connected</string>
+	<string name="local_service_disconnected">local_service_disconnected</string>
+	<!--  -->
+	<string name="service_name">Übersetzungsservice</string>
+	<!--  -->
+	<string name="app_name">Übersetzungsintent</string>
+	<string name="template_user_agent">"%1$s/%2$s (Linux; Android)"</string>
+	<!-- Menu -->
+	<string name="settings_title">Einstellungen</string>
+	<string name="share_title">Empfehlen</string>
+	<!-- languages -->
+	<string name="lang_af">Afrikaans</string>
+	<string name="lang_sq">Albanisch</string>
+	<string name="lang_ar">Arabisch</string>
+	<string name="lang_eu">Baskische</string>
+	<string name="lang_be">Weißrussisch</string>
+	<string name="lang_bg">Bulgarisch</string>
+	<string name="lang_ca">Katalanisch</string>
+	<string name="lang_zh_CN">Chinesisch</string>
+	<string name="lang_zh_TW">Traditionelles Chinesisch</string>
+	<string name="lang_hr">Kroatisch</string>
+	<string name="lang_cs">Tschechische</string>
+	<string name="lang_da">Dänisch</string>
+	<string name="lang_nl">Niederländisch</string>
+	<string name="lang_en">Englisch</string>
+	<string name="lang_et">Estnisch</string>
+	<string name="lang_tl">Filipino</string>
+	<string name="lang_fi">Finnisch</string>
+	<string name="lang_fr">Französisch</string>
+	<string name="lang_gl">Galizisch</string>
+	<string name="lang_de">Deutsch</string>
+	<string name="lang_el">Griechisch</string>
+	<string name="lang_ht">Kreolisch</string>
+	<string name="lang_iw">Hebräisch</string>
+	<string name="lang_hi">Hindi</string>
+	<string name="lang_hu">Ungarisch</string>
+	<string name="lang_is">Isländisch</string>
+	<string name="lang_id">Indonesisch</string>
+	<string name="lang_ga">Irish</string>
+	<string name="lang_it">Italienisch</string>
+	<string name="lang_ja">Japanisch</string>
+	<string name="lang_lv">Lettisch</string>
+	<string name="lang_lt">Litauisch</string>
+	<string name="lang_mk">Mazedonisch</string>
+	<string name="lang_ms">Malaiisch</string>
+	<string name="lang_mt">Malteser</string>
+	<string name="lang_no">Norwegisch</string>
+	<string name="lang_fa">Persisch</string>
+	<string name="lang_pl">Polnisch</string>
+	<string name="lang_pt">Portugiesisch</string>
+	<string name="lang_ro">Rumänisch</string>
+	<string name="lang_ru">Russisch</string>
+	<string name="lang_sr">Serbischen</string>
+	<string name="lang_sk">Slowakische</string>
+	<string name="lang_sl">Slowenisch</string>
+	<string name="lang_es">Spanisch</string>
+	<string name="lang_sw">Swahili</string>
+	<string name="lang_sv">Schwedisch</string>
+	<string name="lang_th">Thai</string>
+	<string name="lang_tr">Türkisch</string>
+	<string name="lang_uk">Ukrainisch</string>
+	<string name="lang_vi">Vietnamesisch</string>
+	<string name="lang_cy">Walisisch</string>
+	<string name="lang_yi">Jiddisch</string>
+</resources>
