@@ -26,18 +26,12 @@
 	<string name="app_instruction">1) Select languages you understand.\n2) Use \"Share\" function to send text from other application, e.g. Twitter, to this one.\n3) Push the desired language button to translate.\n4) Enjoy!
 	</string>
 	<!-- 	 -->
-	<string name="local_service_started">local_service_started</string>
-	<string name="local_service_label">local_service_label</string>
-	<string name="local_service_connected">local_service_connected</string>
-	<string name="local_service_disconnected">local_service_disconnected</string>
-	<!--  -->
 	<string name="service_name">Translate Service</string>
 	<!--  -->
 	<string name="app_name">Translate Intent</string>
 	<string name="template_user_agent">"%1$s/%2$s (Linux; Android)"</string>
 	<!-- Menu -->
 	<string name="settings_title">Settings</string>
-	<string name="share_title">Share</string>
 	<!-- languages -->
 	<string name="lang_af">Afrikaans</string>
 	<string name="lang_sq">Albanian</string>

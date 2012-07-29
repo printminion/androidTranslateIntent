@@ -41,7 +41,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 
-import com.kupriyanov.android.apps.translate.Preferences;
+//import com.kupriyanov.android.apps.translate.Preferences;
 import com.kupriyanov.android.apps.translate.R;
 import com.kupriyanov.android.apps.translate.Setup;
 import com.zedray.framework.application.BaseApplication;
@@ -94,7 +94,7 @@ public class WorkerThread extends Thread {
 	private static final String TAG = "WorkerThread";
 
 	/** [Optional] Synchronisation lock for the Thread Sleep. **/
-	private final Object mWakeLock = new Object();
+//	private final Object mWakeLock = new Object();
 	/** Queue of incoming messages. **/
 	private final List<Message> mWorkQueue = new ArrayList<Message>();
 	/** Pointer to the Application Cache. **/
@@ -241,24 +241,24 @@ public class WorkerThread extends Thread {
 			try {
 
 				prepareUserAgent(mMyService.getApplicationContext());
-				String strSourceLanguage = "";
 
-				if (bundle.getBoolean(Preferences.API)) {
-					String strQuery2 = "https://www.googleapis.com/language/translate/v2?key="
-							+ Setup.API_KEY_GOOGLETRANSLATE + "&q=" + Uri.encode(bundle.getString("TEXT")) + "&source="
-							+ strSourceLanguage + "&target=" + bundle.getString("LANGUAGE_TO") + "&prettyprint=true";
-					Log.d(TAG, "[REQUEST2->]:" + strQuery2);
-					pageContent = getPageContent2(strQuery2, false);
+				/*
+				 * detect language
+				 */
+				String strQueryTargetLanguage = "https://www.googleapis.com/language/translate/v2/detect?key=" + Setup.API_KEY_GOOGLETRANSLATE + "&q=" + Uri.encode(bundle.getString("TEXT"));
+				String strSourceLanguage = detectLanguage(strQueryTargetLanguage);
+				
+				
+				/*
+				 * translate
+				 */
+				String strQuery2 = "https://www.googleapis.com/language/translate/v2?key="
+						+ Setup.API_KEY_GOOGLETRANSLATE + "&q=" + Uri.encode(bundle.getString("TEXT")) + "&source="
+						+ strSourceLanguage + "&target=" + bundle.getString("LANGUAGE_TO") + "&prettyprint=true";
+				Log.d(TAG, "[REQUEST2->]:" + strQuery2);
+				pageContent = getPageContent2(strQuery2, false);
 
-				} else {
-					String strQuery = "https://ajax.googleapis.com/ajax/services/language/translate?v=1.0" + "&q="
-							+ Uri.encode(bundle.getString("TEXT")) + "&langpair=%7C" + bundle.getString("LANGUAGE_TO")
-							+ "&key=" + Setup.API_KEY_GOOGLETRANSLATE;
-					Log.d(TAG, "[REQUEST1->]:" + strQuery);
-					pageContent = getPageContent(strQuery, false);
-
-				}
-
+				
 				// strQuery = Uri.encode(strQuery);
 
 				outBundle.putString("TRANSLATION", pageContent);
@@ -371,6 +371,33 @@ public class WorkerThread extends Thread {
 			JSONArray translations = data.getJSONArray("translations");
 			JSONObject revision = translations.getJSONObject(0);
 			return revision.getString("translatedText");
+		} catch (JSONException e) {
+			throw new ParseException("Problem parsing API response:" + content, e);
+		}
+
+	}
+	
+	
+	public static String detectLanguage(String apiQuery) throws ApiException, ParseException {
+
+		String content = getUrlContent(apiQuery);
+
+		Log.d(TAG, "[RESPONSE->]:" + content);
+
+		try {
+			// Drill into the JSON response to find the content body
+			final JSONObject response = new JSONObject(content);
+			final JSONObject data = response.getJSONObject("data");
+			final JSONArray detections = data.getJSONArray("detections");
+			final JSONArray detectionArr = detections.getJSONArray(0);
+			final JSONObject detectionObj = detectionArr.getJSONObject(0);
+			
+			
+//		 language": "de",
+//	     "isReliable": false,
+//	     "confidence": 1.0
+		     
+			return detectionObj.getString("language");
 		} catch (JSONException e) {
 			throw new ParseException("Problem parsing API response:" + content, e);
 		}

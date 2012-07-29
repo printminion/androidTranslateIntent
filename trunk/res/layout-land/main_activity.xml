@@ -11,9 +11,9 @@
 
 			<Button android:id="@+id/allow" android:layout_height="wrap_content" android:text="de" android:layout_weight="1.0" android:layout_width="fill_parent" />
 
-			<Button android:id="@+id/allow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="en" android:layout_weight="1.0" />
+			<Button android:id="@+id/allow2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="en" android:layout_weight="1.0" />
 
-			<Button android:id="@+id/allow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="ru" android:layout_weight="1.0" />
+			<Button android:id="@+id/allow3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="ru" android:layout_weight="1.0" />
 		</LinearLayout><LinearLayout android:id="@+id/llTranslateAddButton" android:background="@android:drawable/bottom_bar" android:paddingLeft="4.0dip" android:paddingTop="5.0dip" android:paddingRight="4.0dip" android:paddingBottom="1.0dip" android:layout_height="fill_parent" android:orientation="vertical" android:visibility="visible" android:layout_width="80dip">
 
 			<Button android:onClick="addLanguage" android:id="@+id/btnAddLanguages" android:text="@string/btn_add_languages_verical" android:layout_height="fill_parent" android:layout_width="fill_parent"/>
