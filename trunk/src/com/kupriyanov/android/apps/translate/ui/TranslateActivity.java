@@ -287,6 +287,7 @@ public class TranslateActivity extends BaseActivity {
 		startActivityForResult(new Intent(getApplicationContext(), TranslateIntentPreferences.class), REQUEST_PREFERENCES);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);

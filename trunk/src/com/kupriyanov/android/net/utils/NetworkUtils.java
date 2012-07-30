@@ -3,23 +3,41 @@ package com.kupriyanov.android.net.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 public class NetworkUtils {
 
+	private static String TAG = "NetworkUtils";
+
 	public static boolean ifNetworkConected(Context context) {
 
-		final NetworkInfo mobileNetworkInfo = ((ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE)).getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		try {
 
-		final NetworkInfo wifiNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE))
-				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+			final NetworkInfo mobileNetworkInfo = ((ConnectivityManager) context
+					.getSystemService(Context.CONNECTIVITY_SERVICE))
+					.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-		if (mobileNetworkInfo.isConnected()) {
-			return true;
+			if (mobileNetworkInfo.isConnected()) {
+				return true;
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			Log.e(TAG, "Failed to get mobileNetworkInfo");
 		}
 
-		if (wifiNetworkInfo.isAvailable() && wifiNetworkInfo.isConnected()) {
-			return true;
+		try {
+
+			final NetworkInfo wifiNetworkInfo = ((ConnectivityManager) context
+					.getSystemService(Context.CONNECTIVITY_SERVICE))
+					.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+			if (wifiNetworkInfo.isAvailable() && wifiNetworkInfo.isConnected()) {
+				return true;
+			}
+
+		} catch (Exception e) {
+			Log.e(TAG, "Failed to get wifiNetworkInfo");
 		}
 
 		return false;
